@@ -1,0 +1,14 @@
+/* delete row */
+tr.htmx-swapping td {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+
+/* lazy loading */
+.htmx-settling img {
+  opacity: 0;
+}
+img {
+  transition: opacity 500ms ease-in;
+}

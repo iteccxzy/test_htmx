@@ -1,0 +1,7 @@
+{%extends 'base.html'%} {% load static %} {%block content%}
+
+<div hx-get="lazy" hx-trigger="load">
+  <img class="htmx-indicator" width="120" src="{% static 'img/bars.svg' %}" />
+</div>
+
+{%endblock%}

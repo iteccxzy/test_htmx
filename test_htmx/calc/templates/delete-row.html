@@ -1,0 +1,47 @@
+{%extends 'base.html'%} {% load static %} {%block content%}
+<script>
+  document.body.addEventListener("htmx:configRequest", (event) => {
+    event.detail.headers["X-CSRFToken"] = "{{ csrf_token }}";
+  });
+</script>
+<table class="table delete-row-example">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody
+    hx-confirm="Are you sure?"
+    hx-target="closest tr"
+    hx-swap="outerHTML swap:1s"
+  >
+    <tr>
+      <td>Angie MacDowell</td>
+      <td>angie@macdowell.org</td>
+      <td>Active</td>
+      <td>
+        <button class="btn btn-danger" hx-delete="delete-row">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Angie MacDowell</td>
+      <td>angie@macdowell.org</td>
+      <td>Active</td>
+      <td>
+        <button class="btn btn-danger" hx-delete="delete-row">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>Angie MacDowell</td>
+      <td>angie@macdowell.org</td>
+      <td>Active</td>
+      <td>
+        <button class="btn btn-danger" hx-delete="delete-row">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+{%endblock%}
