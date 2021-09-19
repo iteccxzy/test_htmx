@@ -1,0 +1,5 @@
+include/
+Lib/
+Scripts/
+pyvenv.cfg  
+test_htmx/test_htmx/__pycache__/
